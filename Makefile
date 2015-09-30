@@ -3,7 +3,7 @@ ROOT_DIR := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 JENKINS_HOME = /opt/jenkins/data
 
 # android sdk
-ANDROID_SDK_ROOT = $(ROOT_DIR)/android-sdk-ubuntu
+ANDROID_SDK_ROOT = $(ROOT_DIR)/android-sdk-linux
 ANDROID_SDK_DEST = $(JENKINS_HOME)/sdk/Android
 
 ENV_ANDROID = "ANDROID_HOME=$(ANDROID_SDK_DEST)"
