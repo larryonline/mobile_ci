@@ -37,8 +37,8 @@ VOL_GRADLE = $(GRADLE_CACHE_ROOT):$(GRADLE_CACHE_DESC)
 build:
 	docker build -t larry/ci:v1 .
 run:
-	docker run -it --rm -m $(MEM) --name ci.run 		--privileged -e $(ENV_ANDROID) -v $(VOL_CONFIG) -v $(VOL_PLUGIN) -v $(VOL_ANDROID) -v $(VOL_JOBS) -v $(VOL_GRADLE) -p 80:8080 larry/ci:v1
+	docker run -it --rm --name ci.run --privileged -e $(ENV_ANDROID) -v $(VOL_CONFIG) -v $(VOL_PLUGIN) -v $(VOL_ANDROID) -v $(VOL_JOBS) -v $(VOL_GRADLE) -p 80:8080 larry/ci:v1
 debug:
-	docker run -it --rm -m $(MEM) --name ci.debug 	--privileged -e $(ENV_ANDROID) -v $(VOL_CONFIG) -v $(VOL_PLUGIN) -v $(VOL_ANDROID) -v $(VOL_JOBS) -v $(VOL_GRADLE) -p 80:8080 larry/ci:v1 /bin/bash
+	docker run -it --rm --name ci.debug --privileged -e $(ENV_ANDROID) -v $(VOL_CONFIG) -v $(VOL_PLUGIN) -v $(VOL_ANDROID) -v $(VOL_JOBS) -v $(VOL_GRADLE) -p 80:8080 larry/ci:v1 /bin/bash
 deploy:
-	docker run -it -d -m $(MEM) --name ci.d 				--privileged -e $(ENV_ANDROID) -v $(VOL_CONFIG) -v $(VOL_PLUGIN) -v $(VOL_ANDROID) -v $(VOL_JOBS) -v $(VOL_GRADLE) -p 80:8080 larry/ci:v1
+	docker run -it -d --name ci.d --privileged -e $(ENV_ANDROID) -v $(VOL_CONFIG) -v $(VOL_PLUGIN) -v $(VOL_ANDROID) -v $(VOL_JOBS) -v $(VOL_GRADLE) -p 80:8080 larry/ci:v1
