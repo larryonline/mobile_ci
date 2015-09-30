@@ -11,7 +11,7 @@ VOL_ANDROID = $(ANDROID_SDK_ROOT):$(ANDROID_SDK_DEST):ro
 
 # cfgs
 CFG_ROOT = $(ROOT_DIR)/cfg
-CFG_DEST = /opt/jenkins/data/cfg
+CFG_DEST = $(JENKINS_HOME)/cfg
 
 VOL_CONFIG = $(CFG_ROOT):$(CFG_DEST)
 
@@ -23,7 +23,7 @@ VOL_JOBS = $(JOBS_ROOT):$(JOBS_DEST)
 
 # plugins
 PLUGIN_ROOT = $(ROOT_DIR)/plugins
-PLUGIN_DEST = /opt/jenkins/data/plugins
+PLUGIN_DEST = $(JENKINS_HOME)/plugins
 
 VOL_PLUGIN = $(PLUGIN_ROOT):$(PLUGIN_DEST)
 
